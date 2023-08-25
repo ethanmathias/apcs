@@ -70,7 +70,7 @@ public class petAdvice {
 
 		}
 
-		return "Incorrect Input";
+		return "Incorrect Input(s)";
 	}
 
 	public static void main(String[] args) {
