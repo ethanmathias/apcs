@@ -9,7 +9,7 @@ public class petAdvice {
 
 	private void instructions() {
 		System.out.println("Instructions:");
-		System.out.println("enter the first letter of the choice you make - ex. if you choose { A) apartment } enter the first letter shown");
+		System.out.println("enter the first letter of the choice you make - ex. if you choose [[ A) apartment ]] enter the first letter shown");
 		System.out.println("");
 	}
 	
