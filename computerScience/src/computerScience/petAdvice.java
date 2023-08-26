@@ -5,9 +5,11 @@ import java.util.*;
 public class petAdvice {
 
 	private static Scanner scan = new Scanner(System.in);
+	private static petAdvice pet = new petAdvice();
 
+	
 	// gets current location of person
-	public char getLocation() {
+	private char getLocation() {
 		System.out.println("Do you live in a:");
 		System.out.println("A) an apartment");
 		System.out.println("H) house");
@@ -21,7 +23,7 @@ public class petAdvice {
 	}
 
 	// gets hours worked by person
-	public char getHours() {
+	private char getHours() {
 		Scanner scanHours = new Scanner(System.in);
 		System.out.println("How many hours are you at home per day:");
 		System.out.println("A) 18 or more");
@@ -39,7 +41,7 @@ public class petAdvice {
 	}
 
 	// logic for determining which pet person should get
-	public String getRecomendation(char location, char hours) {
+	private String logic(char location, char hours) {
 		if (location == 'H') {
 			if (hours == 'A') {
 				return "Potbellied Pig";
@@ -72,14 +74,17 @@ public class petAdvice {
 
 		return "Incorrect Inputs";
 	}
+	
+	public String getReccomendation() {
+		char location = pet.getLocation();
+		char hours = pet.getHours();
+		String output = pet.logic(location, hours);
+		
+		return output;
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		petAdvice obj = new petAdvice();
-		char location = obj.getLocation();
-		char hours = obj.getHours();
-		String output = obj.getRecomendation(location, hours);
-		System.out.println(output);
-
+		System.out.println(pet.getReccomendation());
 	}
 }
