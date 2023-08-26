@@ -80,10 +80,10 @@ public class petAdvice {
 	}
 
 	public String getReccomendation() {
-		pet.instructions();
-		char location = pet.getLocation();
-		char hours = pet.getHours();
-		String output = pet.logic(location, hours);
+		instructions();
+		char location = getLocation();
+		char hours = getHours();
+		String output = logic(location, hours);
 
 		return output;
 	}
