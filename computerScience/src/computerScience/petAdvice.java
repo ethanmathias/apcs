@@ -7,13 +7,13 @@ public class petAdvice {
 	private static Scanner scan = new Scanner(System.in);
 	private static petAdvice pet = new petAdvice();
 
-	// gets current location of person
-	private static void instructions() {
+	private void instructions() {
 		System.out.println("Instructions:");
 		System.out.println("enter the first letter of the choice you make - ex. if you choose { A) apartment } enter the first letter shown");
 		System.out.println("");
 	}
 	
+	// gets current location of person
 	private char getLocation() {
 		System.out.println("Do you live in a(n):");
 		System.out.println("A) apartment");
@@ -76,7 +76,7 @@ public class petAdvice {
 
 		}
 
-		return "Incorrect Inputs";
+		return "Invalid Inputs";
 	}
 
 	public String getReccomendation() {
