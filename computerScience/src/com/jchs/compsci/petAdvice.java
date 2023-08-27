@@ -28,7 +28,7 @@ public class petAdvice {
 
 	// gets hours worked by person
 	private char getHours() {
-		System.out.println("How many hours are you at home per day:");
+		System.out.println("How many hours are you home per day:");
 		System.out.println("A) 18 or more");
 		System.out.println("B) 10 to 17");
 		System.out.println("C) 8 to 9");
