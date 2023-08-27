@@ -1,11 +1,10 @@
-package computerScience;
+package com.jchs.compsci;
 
 import java.util.*;
 
 public class petAdvice {
 
 	private static Scanner scan = new Scanner(System.in);
-	private static petAdvice pet = new petAdvice();
 
 	private void instructions() {
 		System.out.println("Instructions:");
@@ -89,6 +88,7 @@ public class petAdvice {
 	}
 
 	public static void main(String[] args) {
+		petAdvice pet = new petAdvice();
 		System.out.println(pet.getReccomendation());
 	}
 }
