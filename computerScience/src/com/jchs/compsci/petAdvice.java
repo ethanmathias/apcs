@@ -1,6 +1,6 @@
 package com.jchs.compsci; //package containing code for AP Computer Science
 
-import java.util.*; 
+import java.util.*; //imports scanner
 
 public class petAdvice { //petAdvice class for the petAdvice assignment
 
