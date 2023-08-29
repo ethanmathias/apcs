@@ -58,6 +58,8 @@ public class petAdvice { //petAdvice class for the petAdvice assignment
 	 * C - 8 to 9
 	 * D - 6 to 7
 	 * E - 0 to 5
+	 * 
+	 * in code, outside if statement refers to the location and inner if statements refer to hours
 	 */
 	private String logic(char location, char hours) {
 		if (location == 'H') {
