@@ -92,7 +92,7 @@ public class petAdvice { //petAdvice class for the petAdvice assignment
 
 		}
 
-		return "Invalid Inputs";
+		return "Invalid Inputs"; //returns invalid inputs as at this point a character has been entered in either getHours or getLocation which is not part of the list in logic
 	}
 	
 	//calls getLocation and getHours to get neccesary inputs for logic and then runs logic in order to get reccomendation as a string
