@@ -2,7 +2,7 @@ package com.jchs.compsci; //package containing code for AP Computer Science
 
 import java.util.*; //imports scanner
 
-public class petAdvice { //petAdvice class for the petAdvice assignment
+public class PetAdvice { //petAdvice class for the petAdvice assignment
 
 	private static Scanner scan = new Scanner(System.in); 
 
@@ -66,10 +66,10 @@ public class petAdvice { //petAdvice class for the petAdvice assignment
 			if (hours == 'A') {
 				return "Potbellied Pig";
 			}
-			if (hours == 'B') {
+			else if (hours == 'B') {
 				return "Dog";
 			}
-			if (hours == 'C' || hours == 'D' || hours == 'E') {
+			else if (hours == 'C' || hours == 'D' || hours == 'E') {
 				return "Snake";
 			}
 		}
@@ -77,7 +77,7 @@ public class petAdvice { //petAdvice class for the petAdvice assignment
 			if (hours == 'A' || hours == 'B') {
 				return "Cat";
 			}
-			if (hours == 'C' || hours == 'D' || hours == 'E') {
+			else if (hours == 'C' || hours == 'D' || hours == 'E') {
 				return "Hamster";
 			}
 
@@ -86,7 +86,7 @@ public class petAdvice { //petAdvice class for the petAdvice assignment
 			if (hours == 'A' || hours == 'B' || hours == 'C' || hours == 'D') {
 				return "Fish";
 			}
-			if (hours == 'E') {
+			else if (hours == 'E') {
 				return "Ant Farm";
 			}
 
@@ -106,7 +106,7 @@ public class petAdvice { //petAdvice class for the petAdvice assignment
 	}
 
 	public static void main(String[] args) {
-		petAdvice pet = new petAdvice();
+		PetAdvice pet = new PetAdvice();
 		System.out.println(pet.getReccomendation());
 	}
 }
