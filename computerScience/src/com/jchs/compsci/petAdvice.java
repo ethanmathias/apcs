@@ -1,31 +1,32 @@
-package com.jchs.compsci;
+package com.jchs.compsci; //package containing code for AP Computer Science
 
-import java.util.*;
+import java.util.*; 
 
-public class petAdvice {
+public class petAdvice { //petAdvice class for the petAdvice assignment
 
-	private static Scanner scan = new Scanner(System.in);
+	private static Scanner scan = new Scanner(System.in); 
 
+	//prints out instructions for use to console
 	private void instructions() {
 		System.out.println("Instructions:");
 		System.out.println("enter the first letter of the choice you make - ex. if you choose [[ A) apartment ]] enter the first letter shown");
 		System.out.println("");
 	}
 	
-	// gets current location of person
+	//gets current location of person
 	private char getLocation() {
 		System.out.println("Do you live in a(n):");
 		System.out.println("A) apartment");
 		System.out.println("H) house");
 		System.out.println("D) dormitory");
 
-		String input = scan.nextLine();
-		char locationLower = input.charAt(0);
-		char locationUpper = Character.toUpperCase(locationLower);
+		String input = scan.nextLine(); //scans in line
+		char locationLower = input.charAt(0); //converts string to char                 
+		char locationUpper = Character.toUpperCase(locationLower); //converts char to uppercase char 
 
 		return locationUpper;
 	}
-
+	
 	// gets hours worked by person
 	private char getHours() {
 		System.out.println("How many hours are you home per day:");
@@ -35,15 +36,29 @@ public class petAdvice {
 		System.out.println("D) 6 to 7");
 		System.out.println("E) 0 to 5");
 
-		String input = scan.nextLine();
-		char hoursLower = input.charAt(0);
-		char hoursUpper = Character.toUpperCase(hoursLower);
+		String input = scan.nextLine(); //scans in line
+		char hoursLower = input.charAt(0); //converts string to char
+		char hoursUpper = Character.toUpperCase(hoursLower); //converts char to uppercase char
 		scan.close();
 		return hoursUpper;
 
 	}
 
-	// logic for determining which pet person should get
+	/* logic for determining which pet person should get
+	 * takes the location and hours as inputs as a character
+	 * 
+	 * location character possiblilites:
+	 * H - House
+	 * A - apartment
+	 * D - dormitory
+	 * 
+	 * hours character possibilities:
+	 * A - 18 or more
+	 * B - 10 to 17
+	 * C - 8 to 9
+	 * D - 6 to 7
+	 * E - 0 to 5
+	 */
 	private String logic(char location, char hours) {
 		if (location == 'H') {
 			if (hours == 'A') {
@@ -77,12 +92,13 @@ public class petAdvice {
 
 		return "Invalid Inputs";
 	}
-
+	
+	//calls getLocation and getHours to get neccesary inputs for logic and then runs logic in order to get reccomendation as a string
 	public String getReccomendation() {
 		instructions();
-		char location = getLocation();
-		char hours = getHours();
-		String output = logic(location, hours);
+		char location = getLocation(); //the location
+		char hours = getHours(); //the number of hours worked
+		String output = logic(location, hours); //the reccomendation
 
 		return output;
 	}
