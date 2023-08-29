@@ -95,12 +95,12 @@ public class petAdvice { //petAdvice class for the petAdvice assignment
 		return "Invalid Inputs"; //returns invalid inputs as at this point a character has been entered in either getHours or getLocation which is not part of the list in logic
 	}
 	
-	//calls getLocation and getHours to get neccesary inputs for logic and then runs logic in order to get reccomendation as a string
+	//calls getLocation and getHours to get neccesary inputs for logic and then runs logic in order to get recommendation as a string
 	public String getReccomendation() {
 		instructions();
 		char location = getLocation(); //the location
 		char hours = getHours(); //the number of hours worked
-		String output = logic(location, hours); //the reccomendation
+		String output = logic(location, hours); //the recommendation
 
 		return output;
 	}
