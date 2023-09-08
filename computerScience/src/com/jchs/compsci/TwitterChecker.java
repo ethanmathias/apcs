@@ -17,8 +17,8 @@ public class TwitterChecker {
 
 	/*
 	 * constructor: TwitterChecker()
-	 * purpose: initialize the scanner, initialize the tweet, and start the 'run' method
-	 * precondition: and object of TwitterChecker class is created
+	 * purpose: initialize the scanner, initialize the String tweet, and start the 'run' method
+	 * precondition: an object of TwitterChecker class is created
 	 * postcondition: none
 	 */
 	public TwitterChecker() {
