@@ -1,5 +1,5 @@
 //package contains all JCHS Computer Science assignments
-//assignment can be found at https://docs.google.com/document/d/1tlhSNaIVA42iXDNiS7er5seCZx6_AtXT/edit?usp=sharing&ouid=102208165001585231324&rtpof=true&sd=true
+//assignment can be found at https://tinyurl.com/58vx7cwv
 package com.jchs.compsci;
 
 import java.util.*;
