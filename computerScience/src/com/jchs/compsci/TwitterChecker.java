@@ -40,7 +40,7 @@ public class TwitterChecker {
 			System.out.println("Length Correct");
 			System.out.println("Number of Hashtags: " + String.valueOf(numberOfHashtags()));
 			System.out.println("Number of Attributions: " + String.valueOf(numberOfMentions()));
-			System.out.println("Number of Links: " + String.valueOf(numberofLinks()));
+			System.out.println("Number of Links: " + String.valueOf(numberOfLinks()));
 		} else {
 			System.out.println("Excess Characters: " + String.valueOf(excessCharacters()));
 		}
@@ -120,7 +120,7 @@ public class TwitterChecker {
 	 * precondition: tweet has been initialized with users input 
 	 * postcondition: the number of 'http://' phrases is returned
 	 */
-	private int numberofLinks() {
+	private int numberOfLinks() {
 		String tweetLowerCase = tweet.toLowerCase();
 		int counter = 0;
 		int index = 0;
