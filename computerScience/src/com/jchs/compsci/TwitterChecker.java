@@ -26,7 +26,7 @@ public class TwitterChecker {
 	}
 
 	/*
-	 * method: run() purpose: to check if tweet is within bounds, and if it is then
+	 * method: check() purpose: to check if tweet is within bounds, and if it is then
 	 * output to console that the length is correct and the number of #, @, and
 	 * links OR if tweet is out of bounds then output to console the number of
 	 * excess characters precondition: none postcondition: output to console of the
