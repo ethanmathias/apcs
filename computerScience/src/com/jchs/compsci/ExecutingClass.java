@@ -7,7 +7,7 @@ public class ExecutingClass {
 		// TODO Auto-generated method stub
 		//TwitterChecker Class
 		TwitterChecker tweet = new TwitterChecker();
-		tweet.run();
+		tweet.check();
 		
 		
 		//PetAdvice Class

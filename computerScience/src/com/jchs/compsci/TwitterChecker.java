@@ -33,7 +33,7 @@ public class TwitterChecker {
 	 * either the length is correct and number of #, @, and links OR the number of
 	 * excess characters
 	 */
-	public void run() {
+	public void check() {
 		getTweet();
 		if (tweetInBounds() == true) {
 			System.out.println("Length Correct");
@@ -89,7 +89,7 @@ public class TwitterChecker {
 		int counter = 0;
 		for (int i = 0; i < tweet.length(); i++) {
 			if (tweet.charAt(i) == '@') {
-				if (i == tweet.length()-1 || tweet.charAt(i+1) == ' ') {					
+				if (i == tweet.length()-1 || tweet.charAt(i+1) == ' ') {	// this statement checks if the @ is the last character of string or if the next character after is empty			
 				} else {
 					counter++;
 				}
