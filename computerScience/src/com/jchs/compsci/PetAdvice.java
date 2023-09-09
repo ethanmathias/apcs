@@ -105,8 +105,4 @@ public class PetAdvice { //petAdvice class for the petAdvice assignment
 		return output;
 	}
 
-	public static void main(String[] args) {
-		PetAdvice pet = new PetAdvice();
-		System.out.println(pet.getReccomendation());
-	}
 }

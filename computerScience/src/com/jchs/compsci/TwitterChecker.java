@@ -16,25 +16,24 @@ public class TwitterChecker {
 	private String tweet;
 
 	/*
-	 * constructor: TwitterChecker()
-	 * purpose: initialize the scanner, initialize the String tweet, and start the 'run' method
-	 * precondition: an object of TwitterChecker class is created
-	 * postcondition: none
+	 * constructor: TwitterChecker() purpose: initialize the scanner, initialize the
+	 * String tweet
+	 * TwitterChecker class is created postcondition: none
 	 */
 	public TwitterChecker() {
 		scan = new Scanner(System.in);
 		tweet = "";
-		run();
 	}
 
 	/*
-	 * method: run()
-	 * purpose: to check if tweet is within bounds, and if it is then output to console that the length is correct and the number of #, @, and links 
-	 * 			OR if tweet is out of bounds then output to console the number of excess characters
-	 * precondition: none
-	 * postcondition: output to console of the either the length is correct and number of #, @, and links OR the number of excess characters
+	 * method: run() purpose: to check if tweet is within bounds, and if it is then
+	 * output to console that the length is correct and the number of #, @, and
+	 * links OR if tweet is out of bounds then output to console the number of
+	 * excess characters precondition: none postcondition: output to console of the
+	 * either the length is correct and number of #, @, and links OR the number of
+	 * excess characters
 	 */
-	private void run() {
+	public void run() {
 		getTweet();
 		if (tweetInBounds() == true) {
 			System.out.println("Length Correct");
@@ -44,13 +43,14 @@ public class TwitterChecker {
 		} else {
 			System.out.println("Excess Characters: " + String.valueOf(excessCharacters()));
 		}
+		
 	}
 
 	/*
-	 * method: getTweet()
-	 * purpose: to prompt for, input and return the users tweet
-	 * precondition: a static Scanner object, scan, has been initialized; a String object, tweet, has been initialized
-	 * postcondition: the String tweet is updated with the users input
+	 * method: getTweet() purpose: to prompt for, input and return the users tweet
+	 * precondition: a static Scanner object, scan, has been initialized; a String
+	 * object, tweet, has been initialized postcondition: the String tweet is
+	 * updated with the users input
 	 */
 	private void getTweet() {
 		System.out.println("Please enter a tweet:");
@@ -59,10 +59,9 @@ public class TwitterChecker {
 	}
 
 	/*
-	 * method tweetInBounds()
-	 * purpose: to check if tweet is within bounds
-	 * precondition: tweet has been initialized with users input
-	 * postcondition: an boolean is returned that signifies if the tweet is within bounds
+	 * method tweetInBounds() purpose: to check if tweet is within bounds
+	 * precondition: tweet has been initialized with users input postcondition: an
+	 * boolean is returned that signifies if the tweet is within bounds
 	 */
 	private boolean tweetInBounds() {
 		if (tweet.length() <= 140) {
@@ -73,51 +72,53 @@ public class TwitterChecker {
 	}
 
 	/*
-	 * method excessCharacters()
-	 * purpose: to find the number of excess characters in a tweet
-	 * precondition: tweetInBounds is false; tweet has been initialized with users input
-	 * postcondition: the number of excess characters is returned
+	 * method excessCharacters() purpose: to find the number of excess characters in
+	 * a tweet precondition: tweetInBounds is false; tweet has been initialized with
+	 * users input postcondition: the number of excess characters is returned
 	 */
 	private int excessCharacters() {
 		return Math.abs(140 - tweet.length());
 	}
 
 	/*
-	 * method: numberOfMentions()
-	 * purpose: to find the number of '@' symbols in a tweet
-	 * precondition: tweet has been initialized with users input 
+	 * method: numberOfMentions() purpose: to find the number of '@' symbols in a
+	 * tweet precondition: tweet has been initialized with users input
 	 * postcondition: the number of '@' symbols is returned
 	 */
 	private int numberOfMentions() {
 		int counter = 0;
 		for (int i = 0; i < tweet.length(); i++) {
 			if (tweet.charAt(i) == '@') {
-				counter++;
+				if (i == tweet.length()-1 || tweet.charAt(i+1) == ' ') {					
+				} else {
+					counter++;
+				}
 			}
 		}
 		return counter;
 	}
 
 	/*
-	 * method: numberOfHashtags()
-	 * purpose: to find the number of '#' symbols in a tweet
-	 * precondition: tweet has been initialized with users input 
+	 * method: numberOfHashtags() purpose: to find the number of '#' symbols in a
+	 * tweet precondition: tweet has been initialized with users input
 	 * postcondition: the number of '#' symbols is returned
 	 */
 	private int numberOfHashtags() {
 		int counter = 0;
 		for (int i = 0; i < tweet.length(); i++) {
 			if (tweet.charAt(i) == '#') {
-				counter++;
+				if (i == tweet.length()-1 || tweet.charAt(i+1) == ' ') {					
+				} else {
+					counter++;
+				}
 			}
 		}
 		return counter;
 	}
 
 	/*
-	 * method: numberofLinks()
-	 * purpose: to find the number of 'http://' phrases in a tweet
-	 * precondition: tweet has been initialized with users input 
+	 * method: numberofLinks() purpose: to find the number of 'http://' phrases in a
+	 * tweet precondition: tweet has been initialized with users input
 	 * postcondition: the number of 'http://' phrases is returned
 	 */
 	private int numberOfLinks() {
