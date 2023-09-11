@@ -33,6 +33,8 @@ public class TwitterChecker {
 	 * either the length is correct and number of #, @, and links OR the number of
 	 * excess characters
 	 */
+
+	
 	public void check() {
 		getTweet();
 		if (tweetInBounds() == true) {
@@ -55,7 +57,7 @@ public class TwitterChecker {
 	private void getTweet() {
 		System.out.println("Please enter a tweet:");
 		tweet = scan.nextLine();
-		scan.close();
+		
 	}
 
 	/*
