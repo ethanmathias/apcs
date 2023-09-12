@@ -6,12 +6,13 @@ public class ExecutingClass {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//TwitterChecker Class
-		Scanner scan = new Scanner(System.in);
+		DisplayFraction frac = new DisplayFraction();
+		frac.run();
 
-		//Twitter Checker Object
+		/*Twitter Checker Object
 		TwitterChecker tweet = new TwitterChecker();
 		tweet.repeat();
-		
+		*/
 		
 		
 		
