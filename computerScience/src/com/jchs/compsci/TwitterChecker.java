@@ -33,8 +33,6 @@ public class TwitterChecker {
 	 * either the length is correct and number of #, @, and links OR the number of
 	 * excess characters
 	 */
-
-	
 	public void check() {
 		getTweet();
 		if (tweetInBounds() == true) {
@@ -137,6 +135,25 @@ public class TwitterChecker {
 			}
 		}
 		return counter;
+		
+		
+	}
+	/*
+	 * method: repeat
+	 * purpose: to run the program and prompt user if they would like to run it again
+	 * precondition: Scanner class, check() methods are initialized
+	 * postcondition: none
+	 */
+	public void repeat() {
+		int x = 1;
+		while (x == 1) {
+			check();
+			System.out.println();
+			System.out.println("1 to contiues; 2 to stop");
+			x = Integer.valueOf(scan.nextLine());
+			System.out.println();
+		}
+		System.out.println("Program Stopped");
 	}
 
 }
