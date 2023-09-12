@@ -90,6 +90,7 @@ public class TwitterChecker {
 		for (int i = 0; i < tweet.length(); i++) {
 			if (tweet.charAt(i) == '@') {
 				if (i == tweet.length()-1 || tweet.charAt(i+1) == ' ') {	// this statement checks if the @ is the last character of string or if the next character after is empty			
+					//do nothing
 				} else {
 					counter++;
 				}
@@ -108,6 +109,7 @@ public class TwitterChecker {
 		for (int i = 0; i < tweet.length(); i++) {
 			if (tweet.charAt(i) == '#') {
 				if (i == tweet.length()-1 || tweet.charAt(i+1) == ' ') {					
+					//do nothing
 				} else {
 					counter++;
 				}
@@ -149,7 +151,7 @@ public class TwitterChecker {
 		while (x == 1) {
 			check();
 			System.out.println();
-			System.out.println("1 to contiues; 2 to stop");
+			System.out.println("1 to contiue; 2 to stop");
 			x = Integer.valueOf(scan.nextLine());
 			System.out.println();
 		}
