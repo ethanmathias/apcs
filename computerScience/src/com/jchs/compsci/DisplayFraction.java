@@ -7,57 +7,62 @@ public class DisplayFraction {
 	private String value = "";
 	private Scanner scan = new Scanner(System.in);
 
-	public int num; // numerator
-	public int den; // denominator
+	private int num; // numerator
+	private int den; // denominator
 
-	public void run1() {
-		  getInput();
-		  if (isInteger()) {
-		    System.out.println(value);
-		    return;
-		  }
+	public void getFraction() {
+		System.out.println(logic());
+	}
 
-		  splitString();
-		  bothNegative();
-		  boolean negative = oneNegative();
-		  String concate = "";
-
-		  if (negative) {
-		    concate = "-";
-		  }
-
-		  if (num == den) {
-		    System.out.println(concate + 1);
-		    return;
-		  }
-
-		  if (num == 0) {
-		    System.out.println(concate + num);
-		    return;
-		  }
-
-		  if (den == 0) {
-		    System.out.println("undefined");
-		    return;
-		  }
-
-		  simplfyUsingGCD();
-
-		  if (den == 1) {
-		    System.out.println(concate + num);
-		    return;
-		  }
-
-		  System.out.println(concate + num + "/" + den);
+	private String logic() {
+		getInput();
+		if (isInteger()) {
+			// System.out.println(value);
+			return value;
 		}
 
-	public String getInput() {
+		splitString();
+		bothNegative();
+		boolean negative = oneNegative();
+		String concate = "";
+
+		if (negative) {
+			concate = "-";
+		}
+
+		if (num == den) {
+			// System.out.println(concate + 1);
+			return concate + 1;
+		}
+
+		if (num == 0) {
+			// System.out.println(concate + num);
+			return concate + num;
+		}
+
+		if (den == 0) {
+			// System.out.println("undefined");
+			return "undefined";
+		}
+
+		simplfyUsingGCD();
+
+		if (den == 1) {
+			// System.out.println(concate + num);
+			return concate + num;
+		}
+
+		// System.out.println(concate + num + "/" + den);
+		return concate + num + "/" + den;
+	}
+
+	private String getInput() {
 		System.out.println("Please input Fraction: ");
 		value = scan.nextLine();
 		return value;
 	}
 
-	public void bothNegative() {
+	private void bothNegative() {
 		String numString = String.valueOf(num);
 		String denString = String.valueOf(den);
 
@@ -70,27 +75,25 @@ public class DisplayFraction {
 		}
 	}
 
-	public boolean oneNegative() {
+	private boolean oneNegative() {
 		String numString = String.valueOf(num);
 		String denString = String.valueOf(den);
 
 		if (numString.charAt(0) == '-') {
 			numString = numString.substring(1);
 			num = Integer.parseInt(numString);
-			System.out.println(num);
 			return true;
 		}
 		if (denString.charAt(0) == '-') {
 			denString = denString.substring(1);
 			den = Integer.parseInt(denString);
-			System.out.println(den);
 
 			return true;
 		}
 		return false;
 	}
 
-	public boolean isInteger() {
+	private boolean isInteger() {
 		int index = value.indexOf('/');
 		if (index == -1) {
 			return true;
@@ -100,7 +103,7 @@ public class DisplayFraction {
 	}
 
 	// populated s1 or s2
-	public void splitString() {
+	private void splitString() {
 		String[] splitStrings = value.split("/", 2);
 		num = Integer.parseInt(splitStrings[0]);
 		den = Integer.parseInt(splitStrings[1]);
@@ -108,7 +111,7 @@ public class DisplayFraction {
 	}
 
 	// keep dividing till remainder one
-	public void simplfyUsingGCD() {
+	private void simplfyUsingGCD1() { //not optimzed code
 		int currNum = num;
 		int currDen = den;
 
@@ -121,18 +124,46 @@ public class DisplayFraction {
 				denRemainder = currNum % currDen;
 				currDen = numRemainder;
 				currNum = denRemainder;
-			}
-			if (numRemainder == 0) {
-				num = num / denRemainder;
-				den = den / denRemainder;
-				break;
-			}
-			if (denRemainder == 0) {
-				num = num / numRemainder;
-				den = den / numRemainder;
-				break;
-			}
+			} 
+				if (numRemainder == 0) {
+					num = num / denRemainder;
+					den = den / denRemainder;
+					break;
+				}
+				if (denRemainder == 0) {
+					num = num / numRemainder;
+					den = den / numRemainder;
+					break;
+				}
+			
 
+
+		}
+
+	}
+	private void simplfyUsingGCD() {
+		int currNum = num;
+		int currDen = den;
+
+		int numRemainder = -1;
+		int denRemainder = -1;
+		while (true) {
+			if (numRemainder == 0 || denRemainder == 0) {
+				if (numRemainder == 0) {
+					num = num / denRemainder;
+					den = den / denRemainder;
+					break;
+				} else {
+					num = num / numRemainder;
+					den = den / numRemainder;
+					break;
+				}
+			} else {
+				numRemainder = currDen % currNum;
+				denRemainder = currNum % currDen;
+				currDen = numRemainder;
+				currNum = denRemainder;
+			} 
 		}
 
 	}
@@ -140,12 +171,12 @@ public class DisplayFraction {
 	public void repeat() {
 		String x = "";
 		while (true) {
-			run1();
+			getFraction();
 			System.out.println();
-			System.out.println("1 to contiue; 2 to stop");
+			System.out.println("any key to continue | press 2 to stop");
 			x = scan.nextLine();
 			System.out.println();
-			if (x.compareTo("1") != 0){
+			if (x.compareTo("2") == 0) {
 				break;
 			}
 		}
@@ -153,4 +184,3 @@ public class DisplayFraction {
 	}
 
 }
-
