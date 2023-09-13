@@ -7,7 +7,7 @@ public class ExecutingClass {
 		// TODO Auto-generated method stub
 		//TwitterChecker Class
 		DisplayFraction frac = new DisplayFraction();
-		frac.run();
+		frac.repeat();
 
 		/*Twitter Checker Object
 		TwitterChecker tweet = new TwitterChecker();
