@@ -87,12 +87,12 @@ public class TwitterChecker {
 	 */
 	private int numberOfMentions() {
 		int counter = 0;
-		for (int i = 0; i < tweet.length(); i++) {
+		for (int i = 0; i < tweet.length(); i++) {  //said I might go out of bounds here (somewhere around here)
 			if (tweet.charAt(i) == '@') {
 				if (i == tweet.length()-1 || tweet.charAt(i+1) == ' ') {	// this statement checks if the @ is the last character of string or if the next character after is empty			
 					//do nothing
 				} else {
-					counter++;
+					counter++;   
 				}
 			}
 		}

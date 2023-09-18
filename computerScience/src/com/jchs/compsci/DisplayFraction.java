@@ -1,23 +1,24 @@
 package com.jchs.compsci;
 
+
+
 import java.util.*;
 
 public class DisplayFraction {
 
-	private String value = "";
+	private String value = ""; 
 	private Scanner scan = new Scanner(System.in);
 
 	private int num; // numerator
 	private int den; // denominator
 
 	public void getFraction() {
-		System.out.println(logic());
+		System.out.println(simplyfy());
 	}
 
-	private String logic() {
+	private String simplyfy() {
 		getInput();
 		if (isInteger()) {
-			// System.out.println(value);
 			return value;
 		}
 
@@ -31,28 +32,22 @@ public class DisplayFraction {
 		}
 
 		if (num == den) {
-			// System.out.println(concate + 1);
 			return concate + 1;
 		}
 
 		if (num == 0) {
-			// System.out.println(concate + num);
 			return concate + num;
 		}
 
 		if (den == 0) {
-			// System.out.println("undefined");
 			return "undefined";
 		}
 
 		simplfyUsingGCD();
 
 		if (den == 1) {
-			// System.out.println(concate + num);
 			return concate + num;
 		}
-
-		// System.out.println(concate + num + "/" + den);
 		return concate + num + "/" + den;
 	}
 
@@ -110,37 +105,7 @@ public class DisplayFraction {
 
 	}
 
-	// keep dividing till remainder one
-	private void simplfyUsingGCD1() { //not optimzed code
-		int currNum = num;
-		int currDen = den;
 
-		int numRemainder = -1;
-		int denRemainder = -1;
-		while (true) {
-
-			if (numRemainder != 0 || denRemainder != 0) {
-				numRemainder = currDen % currNum;
-				denRemainder = currNum % currDen;
-				currDen = numRemainder;
-				currNum = denRemainder;
-			} 
-				if (numRemainder == 0) {
-					num = num / denRemainder;
-					den = den / denRemainder;
-					break;
-				}
-				if (denRemainder == 0) {
-					num = num / numRemainder;
-					den = den / numRemainder;
-					break;
-				}
-			
-
-
-		}
-
-	}
 	private void simplfyUsingGCD() {
 		int currNum = num;
 		int currDen = den;
