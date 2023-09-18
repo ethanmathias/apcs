@@ -13,11 +13,11 @@ public class DisplayFraction {
 	private int den; // denominator
 
 	public void getFraction() {
-		System.out.println(simplyfy());
+		getInput();
+		System.out.println(simplify());
 	}
 
-	private String simplyfy() {
-		getInput();
+	private String simplify() {
 		if (isInteger()) {
 			return value;
 		}
