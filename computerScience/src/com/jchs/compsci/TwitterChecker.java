@@ -4,12 +4,7 @@ package com.jchs.compsci;
 
 import java.util.*;
 
-/*
- * Author: Ethan Mathias
- * Last Update: 9/7/2023
- * Purpose: Assignment for Computer Science
- * Description: Checks if a Tweet is within 140 characters and the # of #, @, and links
- */
+
 public class TwitterChecker {
 
 	private static Scanner scan;
