@@ -4,7 +4,7 @@ import java.util.*;
 
 /*
  * Author: Ethan Mathias
- * Last Update: 9/1u/2023
+ * Last Update: 9/19/2023
  * Purpose: Assignment for Computer Science
  * Description: Display a Fraction that is simplified and adheres to a fraction syntax
  */
