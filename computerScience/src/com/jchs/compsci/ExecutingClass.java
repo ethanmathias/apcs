@@ -8,6 +8,7 @@ public class ExecutingClass {
 		//TwitterChecker Class
 		DisplayFraction frac = new DisplayFraction();
 		frac.repeat();
+		//hello
 
 		/*Twitter Checker Object
 		TwitterChecker tweet = new TwitterChecker();
